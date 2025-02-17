@@ -1,39 +1,23 @@
-import './HeaderComponent.css';
+import '../../index.css';
 import React from 'react';
-//import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 const Header = ({ title }) => {
     return (
-        <header className="header">
-        <div className="logo">
-            {/* <Link to="/">My Website</Link> */}
-        </div>
-        <nav className="navigation">
-            <ul>
-                {/* <li><Link to="/">Home</Link></li>
-                <li><Link to="/about">About</Link></li>
-                <li><Link to="/contact">Contact</Link></li> */}
+        <header className="bg-blue-500 text-white p-4">
+        <div className="container mx-auto flex justify-between items-center">
+          <h1 className="text-2xl font-bold">AccessAble </h1>
+          <nav>
+            <ul className="flex space-x-6">
+              <li><a href="/" className="hover:text-gray-200">Home</a></li>
+              <li><a href="/about" className="hover:text-gray-200">About</a></li>
+                <li><a href ="/map" className="hover:text-gray-200">Map</a></li>
             </ul>
-            <h1>You are on {title.name}</h1>
-        </nav>
-    </header>
+          </nav>
+        </div>
+      </header>
     );
 }
 
 export default Header;
-
-
-/*
-        <header className="header">
-            <div className="logo">
-                <Link to="/">My Website</Link>
-            </div>
-            <nav className="navigation">
-                <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/about">About</Link></li>
-                    <li><Link to="/contact">Contact</Link></li>
-                </ul>
-            </nav>
-        </header>*/

@@ -1,16 +1,23 @@
 import React from 'react'
-import Home from './Pages/home'
-import Header from './Components/HeaderComponent/HeaderComponent'
-import ResourceSelector from './Components/DropdownComponent/Dropdown'
-import MapComponent from './Components/MapComponent/MapComponent'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from './Pages/Home'
+import About from './Pages/Hellos'
+import Map from './Pages/Maps'
+
+import Footer from "./Components/FooterComponent/FooterComponent";
 
 function App() {
   return (
-    <div>
-      <MapComponent></MapComponent>
-      <p></p>
-    </div>
-  );
-}
+      <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/map" element={<Map />} />
+          </Routes>
+
+          <Footer/>
+      </BrowserRouter>
+  )
+};
 
 export default App;

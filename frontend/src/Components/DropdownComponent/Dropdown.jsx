@@ -1,7 +1,7 @@
 import { useState } from "react";
 import React from 'react';
 import resources from "../../Constants/resources";
-
+import '../../index.css';
 
 const ResourceSelector = () => {
     const [selectedResource, setSelectedResource] = useState("");
