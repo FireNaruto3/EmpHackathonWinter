@@ -7,14 +7,15 @@ const Header = ({ title }) => {
     return (
         <header className="header">
         <div className="logo">
-            <Link to="/">My Website</Link>
+            {/* <Link to="/">My Website</Link> */}
         </div>
         <nav className="navigation">
             <ul>
-                <li><Link to="/">Home</Link></li>
+                {/* <li><Link to="/">Home</Link></li>
                 <li><Link to="/about">About</Link></li>
-                <li><Link to="/contact">Contact</Link></li>
+                <li><Link to="/contact">Contact</Link></li> */}
             </ul>
+            <h1>You are on {title.name}</h1>
         </nav>
     </header>
     );
