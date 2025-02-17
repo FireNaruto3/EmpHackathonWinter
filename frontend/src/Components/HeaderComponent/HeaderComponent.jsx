@@ -3,10 +3,36 @@ import React from 'react';
 //import { Link } from "react-router-dom";
 
 
-const Header = ({}) => {
+const Header = ({ title }) => {
     return (
-            <h1>eijeijfiej</h1>
+        <header className="header">
+        <div className="logo">
+            <Link to="/">My Website</Link>
+        </div>
+        <nav className="navigation">
+            <ul>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/about">About</Link></li>
+                <li><Link to="/contact">Contact</Link></li>
+            </ul>
+        </nav>
+    </header>
     );
 }
 
-export default Header
+export default Header;
+
+
+/*
+        <header className="header">
+            <div className="logo">
+                <Link to="/">My Website</Link>
+            </div>
+            <nav className="navigation">
+                <ul>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/about">About</Link></li>
+                    <li><Link to="/contact">Contact</Link></li>
+                </ul>
+            </nav>
+        </header>*/

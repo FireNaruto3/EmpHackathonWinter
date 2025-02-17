@@ -10,14 +10,32 @@ const DropDown = ({resources, onSelectResource}) => {
     const handleSelect = (event) => {
         const selected = event.target.value;
         setSelectedResource(selected);
+        //this will be later defined in its parent component, resourceList
         onSelectResource(selected);
+        
 
-        return 
-        <div className = "dropdown-container"> 
-            <label></label>
-        </div>
-
-    }
-
+        return (
+            <div className="dropdown-container">
+                <label htmlFor="resource-dropdown" className="dropdown-label">
+                    Select a Resource:
+                </label>
+                <select
+                    id="resource-dropdown"
+                    value={selectedResource}
+                    onChange={handleSelect}
+                    className="dropdown-menu"
+                >
+                    <option value="" disabled>Select a resource:</option>
+                    {resources.map((resource) => (
+                        <option key={resource.id} value={resource.id}>
+                            {resource.name}
+                        </option>
+                    ))}
+                </select>
+            </div>
+        );
+    };
 }
+
+export default DropdownMenu;
 
