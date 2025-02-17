@@ -10,7 +10,7 @@ import Footer from "./Components/FooterComponent/FooterComponent";
 
 function App() {
   return (
-      <BrowserRouter>
+      <BrowserRouter basename="/EmpHackathonWinter">
       <Header/>
           <Routes>
             <Route path="/" element={<Home />} />
