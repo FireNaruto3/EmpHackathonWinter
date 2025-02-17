@@ -1,19 +1,13 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './Pages/home'
 import Header from './Components/HeaderComponent/HeaderComponent'
 import ResourceSelector from './Components/DropdownComponent/Dropdown'
+import MapComponent from './Components/MapComponent/MapComponent'
 
 function App() {
   return (
     <div>
-      {/* <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
-      </BrowserRouter> */}
-      <ResourceSelector></ResourceSelector>
-
+      <MapComponent></MapComponent>
       <p></p>
     </div>
   );

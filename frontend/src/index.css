@@ -171,4 +171,7 @@ input:focus, textarea:focus, select:focus {
     padding: 15px 0;
   }
 }
-
+.leaflet-container {
+  width: 100%;
+  height: 500px;
+}
