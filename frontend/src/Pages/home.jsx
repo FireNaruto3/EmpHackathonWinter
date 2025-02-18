@@ -1,7 +1,8 @@
+import { Link } from 'react-router-dom';
+
 function Home() {
     return (
         <div className="Home">
-            {/* Hero Section */}
             <section
                 id="home"
                 className="relative bg-center h-screen bg-cover"
@@ -15,11 +16,11 @@ function Home() {
                     <p className="text-lg sm:text-xl mb-6 max-w-xl mx-auto">
                         Your go-to platform for finding accessible resources nearby.
                     </p>
-                    <a href="/features">
+                    <Link to="/features">
                         <button className="px-8 py-4 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition duration-300 shadow-md transform hover:scale-105">
                             Explore Features
                         </button>
-                    </a>
+                    </Link>
                 </div>
             </section>
         </div>

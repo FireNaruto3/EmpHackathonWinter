@@ -4,6 +4,7 @@ import Home from './Pages/Home'
 import About from './Pages/Hellos'
 import Map from './Pages/Maps'
 import Features from './Pages/Features'
+import NotFound from './Pages/NotFound'
 
 import Header from "./Components/HeaderComponent/HeaderComponent"
 import Footer from "./Components/FooterComponent/FooterComponent";
@@ -17,6 +18,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/map" element={<Map />} />
             <Route path = "/features" element = {<Features />}/>
+            <Route path = "/*" element = {<NotFound />} />
           </Routes>
 
           <Footer/>
