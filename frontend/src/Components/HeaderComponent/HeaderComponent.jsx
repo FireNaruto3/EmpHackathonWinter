@@ -31,6 +31,11 @@ const Header = () => {
                                 Features
                             </Link>
                         </li>
+                        <li>
+                            <Link to="/learn" className="hover:text-gray-200">
+                                Learn
+                            </Link>
+                        </li>
                     </ul>
                 </nav>
             </div>

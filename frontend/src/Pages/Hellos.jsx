@@ -15,8 +15,10 @@ const About = () => {
                             Our team is dedicated to ensuring your needs are met with quality and excellence.
                         </p>
                         <p className="text-lg text-gray-600 mb-6">
-                            Our mission is to bring people together and offer helpful resources. We believe in continuous improvement and strive to stay ahead of the curve.
+                            At AccessAble, we believe that access to essential resources should be simple and convenient for everyone. Whether you're looking for the nearest water fountain, library, public restroom, hospital, or charging station, our platform makes it easy to find the services you need.
                         </p>
+                        <p className="text-lg text-gray-600 mb-6">
+Designed for people of all ages, our interactive map provides real-time locations and detailed information on vital public resources in your area. Whether you're commuting, traveling, or exploring a new city, AccessAble ensures that help is always just a few clicks away.                        </p>
                     </div>
               
                     <div className="lg:w-1/2">
@@ -31,7 +33,7 @@ const About = () => {
                 <div className="flex flex-col lg:flex-row justify-between items-center mb-12 space-y-8 lg:space-y-0">         
                     <div className="lg:w-1/2 text-left">
                         <p className="text-lg text-gray-600 mb-6">
-                            Our dedicated team works hard to make sure you have the best experience. With years of expertise, we are here to support you every step of the way.
+                            So what are you waiting for? Start navigating with confidence—find what you need, when you need it.
                         </p>
                     </div>
                 </div>

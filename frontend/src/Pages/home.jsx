@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 function Home() {
     return (
         <div className="Home">
+
             <section
                 id="home"
                 className="relative bg-center h-screen bg-cover"
@@ -21,6 +22,19 @@ function Home() {
                             Explore Features
                         </button>
                     </Link>
+                </div>
+            </section>
+
+            <section className="py-16 bg-gray-100 text-center">
+                <h2 className="text-3xl font-bold mb-6">Watch Our Intro Video</h2>
+                <div className="max-w-4xl mx-auto">
+                    <video
+                        className="w-full rounded-lg shadow-lg"
+                        controls
+                    >
+                        <source src="/aivid.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
             </section>
         </div>

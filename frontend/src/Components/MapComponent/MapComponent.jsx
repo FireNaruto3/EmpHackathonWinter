@@ -16,28 +16,28 @@ const MapComponent = () => {
     const [lng, setLng] = useState(null);
     const [places, setPlaces] = useState([]);
     const [resourceType, setResourceType] = useState("library");
-    const [loadingLocation, setLoadingLocation] = useState(true); 
+    const [loadingLocation, setLoadingLocation] = useState(true);
     const [locationError, setLocationError] = useState("");
-    const [range, setRange] = useState(5000); 
+    const [range, setRange] = useState(5000);
 
     useEffect(() => {
         navigator.geolocation.getCurrentPosition(
             (position) => {
                 setLat(position.coords.latitude);
                 setLng(position.coords.longitude);
-                setLoadingLocation(false); 
+                setLoadingLocation(false);
             },
             (error) => {
                 console.error(error);
                 setLocationError("Unable to retrieve your location.");
-                setLoadingLocation(false); 
+                setLoadingLocation(false);
             }
         );
     }, []);
 
     const fetchPlaces = async (type, range) => {
-        if (loadingLocation) return; 
-        if (!lat || !lng) return setLocationError("Location not available"); 
+        if (loadingLocation) return;
+        if (!lat || !lng) return setLocationError("Location not available");
 
         const osmTags = {
             library: "amenity=library",
@@ -45,6 +45,7 @@ const MapComponent = () => {
             water_fountain: "amenity=drinking_water",
             hospital: "amenity=hospital",
             charging_station: "amenity=charging_station",
+            bus_stop: "highway=bus_stop"  // Added support for bus stops
         };
 
         const query = `
@@ -72,12 +73,10 @@ const MapComponent = () => {
         <div className="max-w-4xl mx-auto p-4 bg-white rounded-lg shadow-md mt-6">
             <h2 className="text-2xl font-semibold text-center mb-6">Find Nearby Resources</h2>
 
-           
             {locationError && (
                 <div className="text-red-500 text-center mb-4">{locationError}</div>
             )}
 
-           
             {loadingLocation ? (
                 <LoadingSpinner />
             ) : (
@@ -92,9 +91,9 @@ const MapComponent = () => {
                             <option value="water_fountain">Water Fountains</option>
                             <option value="hospital">Hospitals</option>
                             <option value="charging_station">Charging Stations</option>
+                            <option value="bus_stop">Bus Stops</option>  {/* Added bus stops */}
                         </select>
 
-                        
                         <div className="flex items-center">
                             <label className="mr-2">Range (m):</label>
                             <input
@@ -116,14 +115,16 @@ const MapComponent = () => {
 
                     {lat && lng && !locationError && (
                         <div className="mt-6">
-                            <MapContainer center={[lat, lng]} zoom={13} minZoom = {5} maxZoom = {18} style={{ height: "400px", width: "100%" }}>
-                                    <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+                            <MapContainer center={[lat, lng]} zoom={13} minZoom={5} maxZoom={18} style={{ height: "400px", width: "100%" }}>
+                                <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+
                                 {/* Current Location Marker with Red Popup */}
-                                <Marker position={[lat, lng]} icon = {userLocationMarker}>
+                                <Marker position={[lat, lng]} icon={userLocationMarker}>
                                     <Popup className="text-red-500 font-bold">You are here</Popup>
                                 </Marker>
+
                                 {places.map((place, index) => (
-                                    <Marker key={index} position={[place.lat, place.lng]} icon = {LocationMarker}>
+                                    <Marker key={index} position={[place.lat, place.lng]} icon={LocationMarker}>
                                         <Popup>{place.name}</Popup>
                                     </Marker>
                                 ))}

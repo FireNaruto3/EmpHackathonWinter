@@ -29,7 +29,7 @@ const ResourceSelector = () => {
 
             {selectedResource && (
                 <div className="mt-4 p-4 border-t-2 border-gray-200">
-                    <h3 className="text-xl font-medium text-gray-800">Selected Resource:</h3>
+                    <h3 className="text-xl font-medium text-gray-800">{selectedResource}:</h3>
                     <p className="text-gray-700 mt-2">{resources[selectedResource]}</p>
                 </div>
             )}
